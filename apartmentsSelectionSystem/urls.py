@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from selectionApartments import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', views.index, name='home'),
-    re_path(r'^about/$', views.about),
-    re_path(r'^about/(?P<counter_value>\d+)/', views.about),
-    path('contact/<str:user_name>', views.contact),
-    path('contact/', views.contact),
-    path('admin/', admin.site.urls),
+    path('', views.index, name='Main'),
+    # path('about/',
+    #     TemplateView.as_view(template_name="selectionApartments/about.html", extra_context={"header": "О сайте"}))
+    # re_path(r'^about/$', views.about),
+    # re_path(r'^about/(?P<counter_value>\d+)/', views.about),
+    # path('contact/<str:user_name>', views.contact),
+    # path('contact/', views.contact),
+    # path('admin/', admin.site.urls),
 ]

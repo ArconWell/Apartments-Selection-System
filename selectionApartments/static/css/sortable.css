@@ -1,0 +1,14 @@
+.sortable-ul {
+	list-style-type: none;
+	margin: 10px auto;
+	padding: 0;
+	width: 500px;
+}
+.sortable-ul li {
+	margin: 4px 0;
+	padding: 5px 10px;
+	font-size: 16px;
+	background: #eee;
+	border: 1px solid #e0e0e0;
+	border-left: 8px solid #e0e0e0;
+}

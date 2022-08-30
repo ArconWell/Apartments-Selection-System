@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link rel="stylesheet" href="{% static "css/results.css" %}" type="text/css">
+</head>
+<body>
+
+<h1>Результат</h1>
+<div class="container">
+    {% csrf_token %}
+    {% for app in data %}
+        <div class="block">
+            {% for appartament in app %}
+                <div class="element">
+                    {% if forloop.counter == 1 %}
+                        <div>Адрес: {{ appartament.apartment.address }}</div>
+                        <div>Цена: {{ appartament.apartment.price }} рублей</div>
+                    {% endif %}
+                    {#            <div>№{{ forloop.counter }}</div>#}
+                    <div>{{ appartament.question.question_name }}: {{ appartament.real_value }}</div>
+                    <div></div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.element {
+
+}
+
+.block {
+    margin: 5px auto;
+    width: 50%;
+    border: black solid;
+    border-radius: 15px;
+}
